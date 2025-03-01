@@ -74,10 +74,10 @@ if __name__ == "__main__":
     path = Path("data/history.csv")
     daily_dataframe = feed_to_df()
     if not path.exists():
-        daily_dataframe.to_csv('data/history.csv', index=False)
+        daily_dataframe.to_csv('data/history.csv', sep='\t', index=False)
     
-    existing_dataframe = pd.read_csv('data/history.csv')
-    daily_dataframe = pd.concat([existing_dataframe, daily_dataframe]).drop_duplicates(subset=['published'], keep='last')
+    # existing_dataframe = pd.read_csv('data/history.csv')
+    # daily_dataframe = pd.concat([existing_dataframe, daily_dataframe]).drop_duplicates(subset=['published'], keep='last')
     daily_dataframe.to_csv(path,sep='\t', index=False)
 
 
