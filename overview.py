@@ -26,7 +26,7 @@ def _():
 @app.cell
 def _(pl):
     df_meteo = (
-        pl.read_csv("data/history.csv")
+        pl.read_csv("https://raw.githubusercontent.com/Nadir-Zenith/heard_from_vine/refs/heads/main/data//history.csv")
         .with_columns(
             date=pl.col("date").str.to_date(), 
         )
@@ -39,7 +39,7 @@ def _(pl):
 @app.cell
 def _(pl):
     df_generated = (
-        pl.read_csv("data/generated.csv")
+        pl.read_csv("https://raw.githubusercontent.com/Nadir-Zenith/heard_from_vine/refs/heads/main/data/generated.csv")
             .with_columns(
                 date=pl.col("date").str.to_date(format="%m/%d/%Y"), 
                 kWh=pl.col("kWh").str.replace(",", "").cast(pl.Int32)/1000
@@ -141,7 +141,7 @@ def _(X, df_meteo, mo, models, radio_mod, y):
 @app.cell
 def _(df_merged, mo):
     if mo.app_meta().mode == "script":
-        df_merged.write_csv("data/merged.csv")
+        df_merged.write_csv("https://raw.githubusercontent.com/Nadir-Zenith/heard_from_vine/refs/heads/main/data/merged.csv")
     return
 
 
