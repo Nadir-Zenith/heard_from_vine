@@ -13,7 +13,7 @@ def _():
 
 @app.cell
 def _(pd):
-    df = pd.read_csv("./data/history.csv", sep="\t")
+    df = pd.read_csv("https://raw.githubusercontent.com/Nadir-Zenith/heard_from_vine/refs/heads/main/data/history.csv", sep="\t")
     df.head()
     return (df,)
 
