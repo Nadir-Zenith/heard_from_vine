@@ -23,7 +23,7 @@ jobs:
         python -m pip install uv
         uv run --python 3.11 fetch_feeds.py
         uv run --python 3.12 eda_feeds.py
-        rm .cache.sqlite
+        
 
     - name: Commit and push if it changed
       run: |
