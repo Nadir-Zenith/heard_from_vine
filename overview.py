@@ -141,7 +141,7 @@ def _(X, df_meteo, mo, models, radio_mod, y):
 @app.cell
 def _(df_merged, mo):
     if mo.app_meta().mode == "script":
-        df_merged.write_csv("https://raw.githubusercontent.com/Nadir-Zenith/heard_from_vine/refs/heads/main/data/merged.csv")
+        df_merged.write_csv("data/merged_new.csv")
     return
 
 
